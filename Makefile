@@ -1,11 +1,8 @@
-default: out/example
+run:
+  go run ./cmd/example -e "+ 1 2"
 
-clean:
-	rm -rf out
+test:
+  go test ./...
 
-test: *.go
-	go test ./...
-
-out/example: implementation.go cmd/example/main.go
-	mkdir -p out
-	go build -o out/example ./cmd/example
+build:
+  go build -o bin/app ./cmd/example
