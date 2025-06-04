@@ -33,3 +33,10 @@ func TestEvaluatePrefixExpression_DivisionByZero(t *testing.T) {
 	_, err := EvaluatePrefixExpression("/ 4 0")
 	assert.Error(t, err)
 }
+func ExampleEvaluatePrefixExpression() {
+	result, err := EvaluatePrefixExpression("+ 1 * 2 3")
+	if err != nil {
+		panic(err)
+	}
+	println(result)
+}
