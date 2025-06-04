@@ -1,5 +1,5 @@
 // TODO: Переіменуйте на власний модуль.
-module github.com/roman-mazur/architecture-lab-2
+module golang_injection_test
 
 go 1.22
 
