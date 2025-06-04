@@ -10,6 +10,8 @@ import (
 	"golang_injection_test/prefixcalc"
 )
 
+//added new coment
+
 type ComputeHandler struct {
 	Input  io.Reader
 	Output io.Writer
