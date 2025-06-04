@@ -21,7 +21,7 @@ func (h *ComputeHandler) Compute() error {
 		return err
 	}
 
-	result, err := prefixcalc.EvaluatePrefixExpression(string(data))
+	result, err := prefixcalc.EvaluatePrefixExpression(strings.TrimSpace(string(data)))
 	if err != nil {
 		return err
 	}
@@ -67,10 +67,7 @@ func main() {
 		output = file
 	}
 
-	handler := &ComputeHandler{
-		Input:  input,
-		Output: output,
-	}
+	handler := &ComputeHandler{Input: input, Output: output}
 
 	if err := handler.Compute(); err != nil {
 		fmt.Fprintln(os.Stderr, "Computation error:", err)
